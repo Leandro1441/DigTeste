@@ -1,0 +1,16 @@
+<div style="top:initial; text-align: center; margin-top: 50px;">
+  
+  <mat-form-field class="example-full-width" style="width: 50%;text-align: center;">
+    <mat-label >Número Inteiro entre 1-1000</mat-label>
+    <input matInput type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" [(ngModel)]="numeroInteiro">
+  </mat-form-field>
+
+  <br>
+  <button mat-stroked-button (click)="adicionarNumeroLista()">Adicionar</button>
+  <button mat-stroked-button (click)="limpar()">Limpar</button>
+  <br> <br>
+  <textarea disabled style="resize:none;" cols="50%"  rows="10" *ngIf="fraseTextArea.length > 0">
+    {{ fraseTextArea }}
+  </textarea>
+</div>
+

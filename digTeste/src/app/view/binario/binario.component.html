@@ -1,0 +1,28 @@
+<div style="top:initial; text-align: center; margin-top: 50px;">
+
+  <mat-form-field class="example-full-width" style="width: 50%;text-align: center;">
+    <mat-label >Número Binario entre 0-255</mat-label>
+    <input matInput placeholder="Ex. 101000" oninput="this.value=this.value.replace(/[^01]/g,'');"  [(ngModel)]="primeiroNumeroBinario">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width" style="width: 50%;text-align: center; ">
+    <mat-label >Operação</mat-label>
+    <input matInput maxlength="1" placeholder="Ex. /*-+%" oninput="this.value=this.value.replace(/[^+*-/%]/g,'');" [(ngModel)]="operacao">
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width" style="width: 50%;text-align: center;">
+    <mat-label >Número Binario entre 0-255</mat-label>
+    <input matInput placeholder="Ex. 101000" oninput="this.value=this.value.replace(/[^01]/g,'');" [(ngModel)]="segundoNumeroBinario">
+  </mat-form-field>
+
+  <br>
+  <button mat-stroked-button (click)="calcular()">Calcular</button>
+
+  <br><br>
+  <textarea disabled style="resize:none;"  cols="50%" rows="1" style="text-align: center;" *ngIf="fraseResultado.length > 0">
+    {{ fraseResultado }}
+  </textarea>
+</div>
+
