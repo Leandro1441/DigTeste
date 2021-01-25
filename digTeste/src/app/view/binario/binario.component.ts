@@ -20,6 +20,15 @@ export class BinarioComponent implements OnInit {
     const valorInteiro1 = parseInt(this.primeiroNumeroBinario, 2);
     const valorInteiro2 = parseInt(this.segundoNumeroBinario, 2);
 
+    if (valorInteiro1 > 255) {
+      this.fraseResultado = 'Primeiro numero é Maior que 255';
+      return;
+    }
+    if (valorInteiro2 > 255) {
+      this.fraseResultado = 'Segundo numero é Maior que 255';
+      return;
+    }
+
     switch (this.operacao) {
     case '+':
         this.criarFraseResultado(valorInteiro1 + valorInteiro2);
